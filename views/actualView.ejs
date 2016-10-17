@@ -2,14 +2,14 @@
 <html>
 <head>
 <title>Calculator</title>
-<link rel='stylesheet' href='/stylesheets/style.css' />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link rel='stylesheet' href='/stylesheets/style.css' />
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script
@@ -18,108 +18,109 @@
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
 <script type="text/javascript" src="/angular/actualAngCal.js"></script>
+
 </head>
 
 <body ng-app="calApp">
 	<div class="container">
-	<div class="row">
-		<div class="col-md-4">
-	</div>
-	<div class="row">
-		<div class = "col-md-4">
-			<h1>CALCULATOR</h1>
-			<form name="calForm" ng-controller="calCntrl">
-				
-				<div class="row">
-				<div class="col-md-2">
-				<input id="inputVal" type="text"  placeholder = "0" ng-pattern="/^(-)?\d{0,9}(\.\d{1,9})?$/" 
-				ng-disabled="{{isInvalidNo}}" ng-model="operationValue" style="border:solid 1px black;" autofocus/>
-				</div>
-				<div class="col-md-2"></div>
-				</div>
-				
-			
-				<div class="row">
-				<div class="col-md-1">
-				<input class="btn btn-warning" type="button" value="1" ng-click="updateOperationValue('1')"/>
-				</div>
-				<div class="col-md-1">
-				<input class="btn btn-warning" type="button" value="2" ng-click="updateOperationValue('2')"/>
-				</div>
-				<div class="col-md-1">
-				<input class="btn btn-warning" type="button" value="3" ng-click="updateOperationValue('3')"/>
-				</div>
-				<div class="col-md-1">
-				<input class="btn btn-info" type="button" value="/" ng-click="divInputs()" />
-				</div>
-				</div>
-				
-				<div class="row">
-				<div class="col-md-1">
-				<input class="btn btn-warning" type="button" value="4" ng-click="updateOperationValue('4')"/>
-				</div>
-				<div class="col-md-1">
-				<input class="btn btn-warning" type="button" value="5" ng-click="updateOperationValue('5')"/>
-				</div>
-				<div class="col-md-1">
-				<input class="btn btn-warning" type="button" value="6" ng-click="updateOperationValue('6')"/>
-				</div>
-				<div class="col-md-1">
-				<input class="btn btn-info" type="button" value="*" ng-click="mulInputs()" />
-				</div>
-				
-				</div>
-				
-				<div class="row">
-				<div class="col-md-1">
-				<input class="btn btn-warning" type="button" value="7" ng-click="updateOperationValue('7')"/>
-				</div>
-				<div class="col-md-1">
-				<input class="btn btn-warning" type="button" value="8" ng-click="updateOperationValue('8')"/>
-				</div>
-				<div class="col-md-1">
-				<input class="btn btn-warning" type="button" value="9" ng-click="updateOperationValue('9')"/>
-				</div>
-				<div class="col-md-1">
-				<input class="btn btn-info" type="button" value="+" ng-click="addInputs()" />
-				</div>
-				</div>
-				
-				<div class="row">
-				<div class="col-md-1">
-				<input class="btn btn-info" type="button" value="=" ng-click="calculate()" />
-				</div>
-				<div class="col-md-1">
-				<input class="btn btn-warning" type="button" value="0" ng-click="updateOperationValue('0')"/>
-				</div>
-				<div class="col-md-1">
-				<input class="btn btn-info" type="button" value="C" ng-click="clearFields()" />
-				</div>
-				<div class="col-md-1">
-				<input class="btn btn-info" type="button" value="-" ng-click="subInputs()" />
-				</div>
-				</div>
-				
-				<div class="row">
-				
-				<div class="col-md-1">
-				<input class="btn btn-info" type="button" value="-/+" ng-click="reverseSigns()" />
-				</div>
-				
-				
-				<div class="col-md-1">
-				<input class="btn btn-info" type="button" value="." ng-click="addDecimal()" />
-				</div>
-				
-				
-				</div>
-				
-			</form>
-			
-		</div>
 		<div class="row">
+			<div class="col-md-4"></div>
+
 			<div class="col-md-4">
+
+				<form name="calForm" ng-controller="calCntrl">
+					<div style="width:202px;height:227px;border:1px solid black;">
+						<div class="row">
+							<div class="col-md-4" style="height:49px;">
+								<div class="form-group">
+									<input id="inputVal" type="text" placeholder="0"
+										ng-pattern="/^(-)?\d{0,9}(\.\d{1,9})?$/" ng-disabled="{{isInvalidNo}}"
+										ng-model="operationValue" max-length="10"
+										style="border: solid 1px black; width: 200px;height:49px;" class="form-control"
+										autofocus />
+								</div>
+							</div>
+
+						</div>
+
+
+						<div class="row">
+							<div class="col-md-4">
+								<table class="table table-condensed"
+									style="border-spacing: 0; border-collapse: separate;">
+									<tr style="border:none;">
+										<td style="padding: 0;"><input class="btn btn-warning"
+												type="button" value="1" ng-click="updateOperationValue('1')"
+												style="width: 50px;" /></td>
+										<td style="padding: 0;"><input class="btn btn-warning"
+												type="button" value="2" ng-click="updateOperationValue('2')"
+												style="width: 50px;" /></td>
+										<td style="padding: 0;"><input class="btn btn-warning"
+												type="button" value="3" ng-click="updateOperationValue('3')"
+												style="width: 50px;" /></td>
+										<td style="padding: 0;"><input class="btn btn-info" type="button"
+												value="/" ng-click="divInputs()" style="width: 50px;" /></td>
+
+									</tr>
+									<tr style="border:none;">
+										<td style="padding: 0;"><input class="btn btn-warning"
+												type="button" value="4" ng-click="updateOperationValue('4')"
+												style="width: 50px;" /></td>
+										<td style="padding: 0;"><input class="btn btn-warning"
+												type="button" value="5" ng-click="updateOperationValue('5')"
+												style="width: 50px;" /></td>
+										<td style="padding: 0;"><input class="btn btn-warning"
+												type="button" value="6" ng-click="updateOperationValue('6')"
+												style="width: 50px;" /></td>
+										<td style="padding: 0;"><input class="btn btn-info" type="button"
+												value="*" ng-click="mulInputs()" style="width: 50px;" /></td>
+
+
+									</tr>
+									<tr style="border:none;">
+										<td style="padding: 0;"><input class="btn btn-warning"
+												type="button" value="7" ng-click="updateOperationValue('7')"
+												style="width: 50px;" /></td>
+										<td style="padding: 0;"><input class="btn btn-warning"
+												type="button" value="8" ng-click="updateOperationValue('8')"
+												style="width: 50px;" /></td>
+										<td style="padding: 0;"><input class="btn btn-warning"
+												type="button" value="9" ng-click="updateOperationValue('9')"
+												style="width: 50px;" /></td>
+										<td style="padding: 0;"><input class="btn btn-info" type="button"
+												value="+" ng-click="addInputs()" style="width: 50px;" /></td>
+										<td />
+									</tr>
+									<tr style="border:none;">
+										<td style="padding: 0;"><input class="btn btn-info" type="button"
+												value="=" ng-click="calculate()" style="width: 50px;" /></td>
+										<td style="padding: 0;"><input class="btn btn-warning"
+												type="button" value="0" ng-click="updateOperationValue('0')"
+												style="width: 50px;" /></td>
+										<td style="padding: 0;"><input class="btn btn-info" type="button"
+												value="C" ng-click="clearFields()" style="width: 50px;" /></td>
+										<td style="padding: 0;"><input class="btn btn-info" type="button"
+												value="-" ng-click="subInputs()" style="width: 50px;" /></td>
+										<td />
+									</tr>
+									<tr style="border:none;">
+										<td />
+										<td style="padding: 0;"><input class="btn btn-info" type="button"
+												value=" . " ng-click="addDecimal()" style="width: 50px;" /></td>
+										<td style="padding: 0;"><input class="btn btn-info" type="button"
+												value="R" ng-click="reverseSigns()" style="width: 50px;" /></td>
+										<td />
+									</tr>
+
+								</table>
+							</div>
+						</div>
+					</div>
+				</form>
+
+			</div>
+
+			<div class="col-md-4"></div>
 		</div>
-	</div>
 </body>
 </html>
